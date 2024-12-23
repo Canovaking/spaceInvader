@@ -1,0 +1,28 @@
+# Project: SpaceInvader
+# Makefile created by Dev-C++ 5.11
+
+CPP      = g++.exe -std=c++11 -D__DEBUG__
+CC       = gcc.exe -std=c++11 -D__DEBUG__
+WINDRES  = windres.exe
+OBJ      = SpaceInvader.o
+LINKOBJ  = SpaceInvader.o
+LIBS     = -L"C:/SDL2/lib" -lmingw32 -lSDL2main -lSDL2 -g3
+INCS     = -I"C:/SDL2/include"
+CXXINCS  = -I"C:/SDL2/include"
+BIN      = SpaceInvader.exe
+CXXFLAGS = $(CXXINCS) -std=c++11 -g3
+CFLAGS   = $(INCS) -std=c++11 -g3
+RM       = rm.exe -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before $(BIN) all-after
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CC) $(LINKOBJ) -o $(BIN) $(LIBS)
+
+SpaceInvader.o: SpaceInvader.c
+	$(CC) -c SpaceInvader.c -o SpaceInvader.o $(CFLAGS)
