@@ -1,0 +1,40 @@
+# Project: Space_Invader_C
+# Makefile created by Dev-C++ 5.11
+
+CPP      = g++.exe -std=c++11
+CC       = gcc.exe -std=c++11
+WINDRES  = windres.exe
+OBJ      = main.o player.o projectile.o enemy.o game_logic.o
+LINKOBJ  = main.o player.o projectile.o enemy.o game_logic.o
+LIBS     = -L"C:/SDL2/lib" -lmingw32 -lSDL2main -lSDL2 -lSDL2_ttf
+INCS     = -I"C:/SDL2/include"
+CXXINCS  = -I"C:/SDL2/include"
+BIN      = Space_Invader_C.exe
+CXXFLAGS = $(CXXINCS) -std=c++11
+CFLAGS   = $(INCS) -std=c++11
+RM       = rm.exe -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before $(BIN) all-after
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CC) $(LINKOBJ) -o $(BIN) $(LIBS)
+
+main.o: main.c
+	$(CC) -c main.c -o main.o $(CFLAGS)
+
+player.o: player.c
+	$(CC) -c player.c -o player.o $(CFLAGS)
+
+projectile.o: projectile.c
+	$(CC) -c projectile.c -o projectile.o $(CFLAGS)
+
+enemy.o: enemy.c
+	$(CC) -c enemy.c -o enemy.o $(CFLAGS)
+
+game_logic.o: game_logic.c
+	$(CC) -c game_logic.c -o game_logic.o $(CFLAGS)
