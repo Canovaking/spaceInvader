@@ -17,8 +17,7 @@ Project of Embedded Software for the Internet of Things - Kasim Sinan Yildirim -
     1. [Hardware](#hardware-1)
     2. [Software](#software-1)
 5. [User Guide](#user-guide)
-6. [Options](#options)
-7. [References](#references)
+6. [References](#references)
 
 <a name="project-overview"></a>
 ## Project Overview  
@@ -115,10 +114,6 @@ space_invader
 3. Run the project
 4. Play, click the button to shoot at enemy spacecraft and the pad to move and dodge enemy's shots
 5. Have fun :)
-
-<a name="options"></a>
-## Options
-
 
 <a name="references"></a>
 ## References
