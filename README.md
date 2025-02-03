@@ -68,9 +68,9 @@ space_invader
 
 <hr>
 
-* [Video Demo](https://www.youtube.com/)
-* [Presentation PDF](https://github.com/Canovaking/spaceInvader/)
-* [Presentation PPT](https://github.com/Canovaking/spaceInvader/)
+* [Video Demo](https://youtu.be/KtH1kI1rhxQ?si=1FkxvvTrHPZ7Lirf)
+* [Presentation PDF](https://github.com/Canovaking/spaceInvader/blob/main/PresentazioneFinale.pdf)
+* [Presentation PPT](https://github.com/Canovaking/spaceInvader/blob/main/PresentazioneFinale.pptx)
 
 <a name="requirements"></a>
 ## Requirements
