@@ -3,44 +3,66 @@ Project of Embedded Software for the Internet of Things - Kasim Sinan Yildirim -
 
 | Group 25        | Mail | Contribution |
 |--|--|--|
-| Alessio De Col | alessio.decol@studenti.unitn.it | Converting the game on ccs studio, implementation of interrupts, resolution of bug, management of input TODO|
-| Antonio Amabile | antonio.amabile@studenti.unitn.it | First draft in c of the game, insertion of comments, TODO |
-| Marko Markovic | marko.markovic@studenti.unitn.it | Implementation of collision system, upgrade of the game, final review of the project TODO|
-
-<a name="description"></a>
-## Description
-Our project is a retro arcade-style Space Invader, this game is developed on the MSP432 Launchpad with the TI Educational BoosterPack Sensors. The game challenges players to control a spaceship and defend against waves of invading enemies.
-The game logic is implemented with a structured system that includes player movement, enemy behaviors, and interactive shooting mechanics. The player has three lives and must defeat enemies across three progressively difficult levels. Each level introduces different enemy sprites and an increasing probability of enemy attacks. In Level 1, enemies have a 2% chance of firing per frame, increasing to 3% in Level 2 and 4% in Level 3. If the player successfully clears all levels, they win the game, and their final score is displayed along with a live score tracking system.
-This embedded systems project demonstrates the integration of hardware and software, utilizing the MSP432 Launchpad's capabilities to create an interactive and engaging gaming experience.
-
+| Alessio De Col | alessio.decol@studenti.unitn.it | Collisions, Inputs (Buttons, Joystick), Game Logics, Enemy Logic|
+| Antonio Amabile | antonio.amabile@studenti.unitn.it | Draft C Code, Game Logic, Player Logic, Enemy Logic|
+| Marko Markovic | marko.markovic@studenti.unitn.it | Collisions, Graphics, Game Logic, Projectile Logics, Enemy Logic|
 
 ## Table of contents
-1. [Description](#description)
-2. [Table of contents](#table-of-contents)
-3. [Project Layout](#project-layout)
-4. [Requirements](#requirements)
+1. [Project Overview](#project-overview)
+2. [Project Layout](#project-layout)
+3. [Requirements](#requirements)
     1. [Hardware](#hardware)
     2. [Software](#software)
-5. [Installation](#installation)
+4. [Installation](#installation)
     1. [Hardware](#hardware-1)
     2. [Software](#software-1)
-6. [User Guide](#user-guide)
-7. [Options](#options)
-8. [References](#references)
+5. [User Guide](#user-guide)
+6. [Options](#options)
+7. [References](#references)
+
+<a name="project-overview"></a>
+## Project Overview  
+This project is a **retro arcade-style Space Invaders game** developed on the **MSP432 LaunchPad** using the **TI Educational BoosterPack Sensors**. Players control a spaceship and must defend against waves of invading enemies, combining classic gameplay with embedded systems programming.
+
+### Gameplay  
+The game challenges players to maneuver their spaceship and shoot down enemies while avoiding incoming attacks.  
+
+### Game Mechanics  
+- **Player Controls:** Move the spaceship and shoot enemies.  
+- **Lives:** Players start with **three lives**.  
+- **Levels:** The game consists of **three progressively difficult levels**.  
+- **Enemies:**  
+  - **Level 1:** Enemies have a **2% chance** of firing per frame.  
+  - **Level 2:** Fire rate increases to **3% per frame**.  
+  - **Level 3:** Fire rate rises to **4% per frame**.  
+- **Winning Condition:** If all levels are cleared, the player **wins** and their **final score** is displayed.  
+- **Scoring System:** A **live score tracking system** is implemented.  
+
+
 
 
 ## Project Layout
 ```
-├───.vscode
-├───src
-│   ├───
-│       |───
-│       |───
-│   ├───images
-│   ├───msp432
-│   │   ├───
-│   │   └───
-└───.gitignore
+space_invader
+├─── Binaries
+├─── Includes
+├─── Debug
+├─── LcdDriver
+├─── targetConfigs
+├─── src
+│   ├─── enemy.c
+│   ├─── enemy.h
+│   ├─── graphics.c
+│   ├─── graphics.h
+│   ├─── main.c
+│   ├─── player.c
+│   ├─── player.h
+│   ├─── projectile.c
+│   ├─── projectile.h
+│   ├─── startup_msp432p401r_ccs.c
+│   ├─── system_msp432p401r.c
+│   ├─── msp432p401r.cmd
+└─── .gitignore
 ```
 
 
@@ -51,21 +73,25 @@ This embedded systems project demonstrates the integration of hardware and softw
 * [Presentation PDF](https://github.com/Canovaking/spaceInvader/)
 * [Presentation PPT](https://github.com/Canovaking/spaceInvader/)
 
-
+<a name="requirements"></a>
 ## Requirements
+<a name="hardware"></a>
 ### Hardware
 1. MSP432P401R Launchpad
 2. MSP432P401R BoosterPack
 
+<a name="software"></a>
 ### Software
 1. Code Composer Studio
 2. Driverlib
 
+<a name="installation"></a>
 ## Installation
+<a name="hardware-1"></a>
 ### Hardware
 1. Connect the Boosterpack to the MSP432 Launchpad
 2. Connect the MSP432 Launchpad to the computer
-
+<a name="software-1"></a>
 ### Software
 1. Clone the repository
 2. Open the project in Code Composer Studio
@@ -82,7 +108,7 @@ This embedded systems project demonstrates the integration of hardware and softw
         <img src="https://github.com/Canovaking/spaceInvader/blob/main/images/Step2.jpeg">
 
 
-
+<a name="user-guide"></a>
 ## User Guide
 1. Connect the MSP432 to the computer as described in the [installation section](#installation)
 2. [Build](#hardware-1) and run the project
@@ -90,11 +116,11 @@ This embedded systems project demonstrates the integration of hardware and softw
 4. Play, click the button to shoot at enemy spacecraft and the pad to move and dodge enemy's shots
 5. Have fun :)
 
-
+<a name="options"></a>
 ## Options
 
 
-
+<a name="references"></a>
 ## References
 1. [MSP432P401R Launchpad](https://www.ti.com/tool/MSP-EXP432P401R)
 2. [MSP432P401R BoosterPack](https://www.ti.com/tool/BOOSTXL-EDUMKII)
